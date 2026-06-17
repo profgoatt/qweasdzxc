@@ -1,0 +1,137 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(135deg,#ff9a9e,#fad0c4);
+    overflow:hidden;
+}
+
+.container{
+    text-align:center;
+    padding:20px;
+    position:relative;
+}
+
+/* BUTTON */
+#surpriseBtn{
+    padding:18px 40px;
+    font-size:24px;
+    border:none;
+    border-radius:50px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+#surpriseBtn:hover{
+    transform:scale(1.05);
+}
+
+/* MESSAGE */
+.hidden{
+    display:none;
+}
+
+#message{
+    animation:popUp 1s ease;
+    color:white;
+    background:rgba(255,255,255,0.15);
+    backdrop-filter:blur(10px);
+    padding:40px;
+    border-radius:25px;
+    box-shadow:0 0 40px rgba(255,255,255,.3);
+}
+
+#message h1{
+    font-size:3.5rem;
+    text-shadow:
+        0 0 10px #fff,
+        0 0 20px #ff69b4,
+        0 0 40px #ff69b4;
+    margin-bottom:20px;
+}
+
+/* POPUP */
+@keyframes popUp{
+    from{transform:scale(.5);opacity:0;}
+    to{transform:scale(1);opacity:1;}
+}
+
+/* HEARTS */
+.heart{
+    position:fixed;
+    bottom:-50px;
+    animation:floatHeart 6s linear forwards;
+    pointer-events:none;
+    z-index:999;
+}
+
+@keyframes floatHeart{
+    0%{transform:translateY(0);opacity:1;}
+    100%{transform:translateY(-120vh);opacity:0;}
+}
+
+/* CONFETTI */
+.confetti{
+    position:fixed;
+    top:-20px;
+    width:10px;
+    height:10px;
+    background:white;
+    animation:fall 4s linear forwards;
+}
+
+@keyframes fall{
+    from{transform:translateY(-50px) rotate(0deg);}
+    to{transform:translateY(110vh) rotate(720deg);}
+}
+
+/* =========================
+   ✅ FIXED PHOTO POSITIONING
+   ========================= */
+
+.side-images{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100vw;
+    height:100vh;
+    pointer-events:none;
+    z-index:1;
+}
+
+/* shared photo style */
+.side-img{
+    width:220px;
+    height:300px;
+    object-fit:cover;
+    border-radius:20px;
+    box-shadow:0 0 30px rgba(255,255,255,0.4);
+    opacity:0;
+    transition:1s ease;
+    position:fixed;
+    top:50%;
+    transform:translateY(-50%) scale(0.8);
+}
+
+/* PUSH TO REAL SCREEN EDGES */
+.side-img.left{
+    left:202px;
+}
+
+.side-img.right{
+    right:202px;
+}
+
+/* SHOW ANIMATION */
+.side-images.show .side-img{
+    opacity:1;
+    transform:translateY(-50%) scale(1);
+}

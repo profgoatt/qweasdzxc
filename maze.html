@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 2 - The Maze</title>
+
+    <link rel="stylesheet" href="maze.css">
+</head>
+<body>
+
+<div id="game-container">
+
+    <div id="ui">Chapter 2</div>
+
+    <canvas id="game" width="1000" height="600"></canvas>
+
+    <div id="start" class="modal active">
+        <div class="modal-content">
+            <h1>THE MAZE OF MEMORIES</h1>
+            <p>Find your way to the portal.</p>
+            <p>Use WASD or Arrow Keys.</p>
+
+            <button class="start-btn" onclick="startGame()">
+                BEGIN
+            </button>
+        </div>
+    </div>
+
+    <div id="question" class="modal">
+        <div class="modal-content">
+            <h2>QUESTION</h2>
+
+            <p id="questionText"></p>
+
+            <div id="answers" class="choices"></div>
+        </div>
+    </div>
+
+</div>
+
+<script src="maze.js" defer></script>
+
+</body>
+</html>

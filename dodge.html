@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chapter 3 - Dodge The Obstacles</title>
+
+<link rel="stylesheet" href="dodge.css">
+</head>
+<body>
+
+<div id="game-container">
+
+    <div id="ui">
+        Chapter 3 | Lives: <span id="lives">3</span>
+    </div>
+
+    <canvas id="game" width="1000" height="600"></canvas>
+
+    <div id="start" class="modal active">
+        <div class="modal-content">
+            <h1>crazy challenge</h1>
+            <p>Dodge the obstacles and reach the heart portal.</p>
+            <p>Use WASD or Arrow Keys.</p>
+            <button class="start-btn" onclick="startGame()">BEGIN</button>
+        </div>
+    </div>
+
+    <div id="question" class="modal">
+        <div class="modal-content">
+            <h2>question question!! ❤️</h2>
+            <p id="questionText"></p>
+            <div id="answers" class="choices"></div>
+        </div>
+    </div>
+
+</div>
+
+<script src="dodge.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,96 @@
+body{
+    margin:0;
+    overflow:hidden;
+    background:#091428;
+    font-family:Arial, sans-serif;
+}
+
+.hud{
+    position:fixed;
+    top:20px;
+    left:20px;
+    color:white;
+    z-index:10;
+}
+
+#gameArea{
+    width:100vw;
+    height:100vh;
+    position:relative;
+}
+
+#target{
+    width:70px;
+    height:70px;
+    border-radius:50%;
+    position:absolute;
+    cursor:pointer;
+
+    background:
+    radial-gradient(circle,#ff4444 20%,white 20%,white 40%,#ff4444 40%,#ff4444 60%,white 60%,white 80%,#ff4444 80%);
+}
+
+.hidden{
+    display:none;
+}
+
+.modal{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,0.85);
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    z-index:999;
+}
+
+.modal.hidden{
+    display:none;
+}
+
+.modal-content{
+    background:#0f1c2d;
+    border:2px solid gold;
+    border-radius:12px;
+
+    padding:40px;
+    width:400px;
+
+    text-align:center;
+    color:white;
+
+    box-shadow:0 0 30px rgba(255,215,0,.3);
+}
+
+.modal-content h2{
+    color:gold;
+}
+
+.answer-btn{
+    width:100%;
+    padding:15px;
+    margin-top:12px;
+
+    border:none;
+    border-radius:8px;
+
+    background:#0ac8b9;
+    color:black;
+
+    font-size:16px;
+    font-weight:bold;
+
+    cursor:pointer;
+}
+
+.answer-btn:hover{
+    transform:scale(1.03);
+}
+
+.result-message{
+    color:#0ac8b9;
+    font-size:20px;
+    margin-top:15px;
+}

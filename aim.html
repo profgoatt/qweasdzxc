@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aim Trainer</title>
+    <link rel="stylesheet" href="aim.css">
+</head>
+<body>
+
+    <div class="hud">
+        <h1>Aim Trainer</h1>
+        <p>Hits: <span id="hits">0</span>/6</p>
+        <p>Time: <span id="time">0.00</span>s</p>
+    </div>
+
+    <div id="gameArea">
+        <div id="target"></div>
+    </div>
+
+    <!-- Question Modal -->
+    <div id="questionModal" class="modal hidden">
+        <div class="modal-content">
+            <h2>❤️ Question 1 ❤️</h2>
+            <p>When was our first talk?</p>
+
+            <button class="answer-btn" onclick="answerQuestion(true)">
+                Nov 26
+            </button>
+
+            <button class="answer-btn" onclick="answerQuestion(false)">
+                May 5
+            </button>
+
+            <button class="answer-btn" onclick="answerQuestion(false)">
+                Dec 15
+            </button>
+        </div>
+    </div>
+
+    <script src="aim.js"></script>
+
+</body>
+</html>
