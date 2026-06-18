@@ -1,14 +1,8 @@
-const bgm = document.getElementById("bgm");
 const button = document.getElementById("surpriseBtn");
 const message = document.getElementById("message");
 const photos = document.querySelector(".side-images");
 
 button.addEventListener("click", () => {
-
-    if (bgm) {
-        bgm.volume = 0.4;
-        bgm.play().catch(() => {});
-    }
 
     button.style.display = "none";
     message.classList.remove("hidden");
@@ -19,7 +13,6 @@ button.addEventListener("click", () => {
     createConfetti();
     typeWriter();
 });
-
 
 /* HEARTS */
 function createHearts(){
