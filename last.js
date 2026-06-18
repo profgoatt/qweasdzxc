@@ -6,11 +6,6 @@ const bgm = document.getElementById("bgm");
 
 button.addEventListener("click", () => {
 
-    if (bgm) {
-        bgm.volume = 0.4;
-        bgm.play().catch(() => {});
-    }
-
     button.style.display = "none";
     message.classList.remove("hidden");
 
@@ -20,6 +15,7 @@ button.addEventListener("click", () => {
     createConfetti();
     typeWriter();
 });
+
 
 /* HEARTS */
 function createHearts(){
