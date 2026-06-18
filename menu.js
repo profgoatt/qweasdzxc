@@ -199,17 +199,22 @@ function playNarration(text) {
 
 function startGame() {
 
-    if (heartbeat) heartbeat.play();
+    if (heartbeat) {
+        heartbeat.currentTime = 0;
+        heartbeat.play().catch(() => {});
+    }
 
     if (bgm) {
-        setTimeout(() => bgm.volume = 0.2, 200);
-        bgm.play();
+        bgm.volume = 0.3;
+        bgm.play().catch(() => {});
     }
 
     const btn = document.querySelector(".start-btn");
 
     if (btn) {
+
         const rect = btn.getBoundingClientRect();
+
         const cx = rect.left + rect.width / 2;
         const cy = rect.top + rect.height / 2;
 
@@ -219,13 +224,27 @@ function startGame() {
     }
 
     setTimeout(() => {
+
+        if (bgm) {
+
+            let fade = setInterval(() => {
+
+                if (bgm.volume > 0.05) {
+                    bgm.volume -= 0.05;
+                } else {
+                    bgm.pause();
+                    clearInterval(fade);
+                }
+
+            }, 100);
+        }
+
         document.body.style.transition = "0.8s";
         document.body.style.opacity = "0";
 
         setTimeout(() => {
-            // ✅ CHANGE THIS PATH
             window.location.href = "aim.html";
-        }, 800);
+        }, 1000);
 
     }, 700);
 }
