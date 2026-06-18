@@ -2,7 +2,14 @@ const button = document.getElementById("surpriseBtn");
 const message = document.getElementById("message");
 const photos = document.querySelector(".side-images");
 
+const bgm = document.getElementById("bgm");
+
 button.addEventListener("click", () => {
+
+    if (bgm) {
+        bgm.volume = 0.4;
+        bgm.play().catch(() => {});
+    }
 
     button.style.display = "none";
     message.classList.remove("hidden");
