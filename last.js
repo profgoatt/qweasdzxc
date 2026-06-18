@@ -77,5 +77,5 @@ function typeWriter(){
             clearInterval(typing);
         }
 
-    }, 80);
+    }, 70);
 }
