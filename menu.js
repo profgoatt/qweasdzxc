@@ -126,6 +126,13 @@ function showScene() {
 }
 
 function startCutscene() {
+
+    // Play music immediately when cutscene starts
+    if (bgm) {
+        bgm.volume = 0.3;
+        bgm.play().catch(() => {});
+    }
+
     showScene();
 
     const interval = setInterval(() => {
@@ -140,11 +147,8 @@ function startCutscene() {
     cutscene.addEventListener("click", () => {
         clearInterval(interval);
         cutscene.style.display = "none";
-        startIntro();
     });
 }
-
-startCutscene();
 
 // MAIN ANIMATION LOOP
 function animate() {
